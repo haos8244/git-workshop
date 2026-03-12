@@ -77,6 +77,7 @@ git add mistake.txt
 git commit -m "bad idea round 3"
  
 # Hard reset — nuclear option, everything gone
+```
 
 ---
 

@@ -10,6 +10,8 @@ This guide assumes comfortable knowledge of basic shell commands. You should als
 
 Check out the html deployed website: **[README](https://haos8244.github.io/git-workshop/index.html)** | **[Playground](https://haos8244.github.io/git-workshop/playground.html)**
 
+**[Link to the GitHub Repository](https://haos8244.github.io/git-workshop)**
+
 ---
 
 ## Contents
@@ -24,12 +26,12 @@ Check out the html deployed website: **[README](https://haos8244.github.io/git-w
 8. [Branches](#branches)
 9. [Merge](#merge)
 10. [Rebase](#rebase)
-11. [Reset](#reset)
+11. [Reset](#reset) 
 12. [Remotes](#remotes)
 13. [GitHub](#github)
 14. [Pull Requests](#pull-requests)
 15. [Gitignore](#gitignore)
-16. [Part 2](#part2)
+16. [Part 2](#part-2)
 17. [Interactive Session](#interactive-session)
 
 ---
@@ -414,7 +416,7 @@ git log --oneline --graph --all    # observe the clean linear history
 
 ## Reset
 
-Reset is how you undo things in git. It moves the branch pointer (and `HEAD`) backwards.
+Reset is how you undo things in git. It moves the branch pointer (and `HEAD`) backwards. 
 
 ### `--soft` — undo commit, keep changes staged
 ```bash
