@@ -646,6 +646,8 @@ Since the generated `.html` is a build artifact, add `*.html` to your `.gitignor
 
 *Coming soon — this section will contain the hands-on collaborative exercise we'll work through together.*
 
+Head over to the **[Playground](playground.html)** to start practicing. There are challenges, merge conflicts, and a sandbox to break things in.
+
 ---
 
 ## Quick Reference
