@@ -10,7 +10,7 @@ This guide assumes comfortable knowledge of basic shell commands. You should als
 
 Check out the html deployed website: **[README](https://haos8244.github.io/git-workshop/index.html)** | **[Playground](https://haos8244.github.io/git-workshop/playground.html)**
 
-**[Link to the GitHub Repository](https://haos8244.github.io/git-workshop)**
+**[Link to the GitHub Repository](https://github.com/haos8244/git-workshop)**
 
 ---
 
