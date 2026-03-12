@@ -8,6 +8,8 @@ A hands-on workshop covering the fundamentals of git and GitHub. This guide walk
 
 This guide assumes comfortable knowledge of basic shell commands. You should also have [added your SSH key to GitHub](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) before starting.
 
+Check out the html deployed website: **[README](https://haos8244.github.io/git-workshop/index.html)** | **[Playground](https://haos8244.github.io/git-workshop/playground.html)**
+
 ---
 
 ## Contents
@@ -300,7 +302,7 @@ echo "title,director,year" > classics.csv
 git add classics.csv
 git commit -m "D: added classics.csv"
 git log
-```
+```**[Playground](playground.html)**
 
 ### How branches are stored
 
@@ -381,7 +383,7 @@ The result: a linear history that looks as if you branched off the latest `main`
 
 | | Merge | Rebase |
 |---|---|---|
-| **History** | Preserves true branching history | Creates linear history |
+| **History** | Preserves true branching history | Creates linear history |**[Playground](playground.html)**
 | **Merge commits** | Creates them | Avoids them |
 | **Readability** | Cluttered on busy projects | Clean, easy to follow |
 | **Safety** | Safe on any branch | **Never rebase public/shared branches** |
@@ -677,7 +679,7 @@ Head over to the **[Playground](playground.html)** to start practicing. There ar
 | `git init` | Initialize a new repo |
 | `git status` | Show working tree status |
 | `git add <file>` | Stage changes |
-| `git commit -m "msg"` | Commit staged changes |
+| `git commit -m "msg"` | Commit staged changes |**[Playground](playground.html)**
 | `git log --oneline --graph --all` | Visualize commit history |
 | `git branch <name>` | Create a branch |
 | `git switch <name>` | Switch branches |
