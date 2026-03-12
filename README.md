@@ -27,7 +27,8 @@ This guide assumes comfortable knowledge of basic shell commands. You should als
 13. [GitHub](#github)
 14. [Pull Requests](#pull-requests)
 15. [Gitignore](#gitignore)
-16. [Part 2 — Interactive Session](#part-2--interactive-session)
+16. [Part 2](#part2)
+17. [Interactive Session](#interactive-session)
 
 ---
 
@@ -330,29 +331,6 @@ git log --oneline --decorate --graph --parents  # visualize the result
 
 If the base branch has **not** diverged (no new commits since the feature branched off), git simply moves the pointer forward. No merge commit is created.
 
-### Merge conflicts
-
-When both branches modified the same part of the same file, git can't auto-resolve. You'll see conflict markers in the file:
-```
-<<<<<<< HEAD
-your changes
-=======
-their changes
->>>>>>> feature-branch
-```
-
-Edit the file to resolve the conflict, remove the markers, then:
-```bash
-git add <resolved-file>
-git merge --continue
-```
-
-If you just want to accept all changes from one side:
-```bash
-git checkout --ours <file>     # keep the current branch's version
-git checkout --theirs <file>   # keep the incoming branch's version
-```
-
 ### Merge workflow example
 ```bash
 # 1. Update main with a new commit
@@ -642,9 +620,51 @@ Since the generated `.html` is a build artifact, add `*.html` to your `.gitignor
 
 ---
 
-## Part 2 — Interactive Session
+## Part 2
 
-*Coming soon — this section will contain the hands-on collaborative exercise we'll work through together.*
+- Fork → Forking a repo and contributing
+- Reflog → Reference Log for lost commits
+- Merge Conflicts → Why they arise and how to resolve them
+- Rebase Conflicts → Why they arise and keep history clean
+- Squash → How to squash commits, usually asked
+- Stash → Work on multiple things without branching
+- Revert → Scalpel git reset, safely undo changes
+- Cherry Pick → Selectively move changes from branch to another
+- Bisect → Find bugs faster instead of through git history
+- Worktrees → Parallel development instead of old branches
+- Tags → Tags to version and release code
+
+### Merge conflicts - brief overview
+
+When both branches modified the same part of the same file, git can't auto-resolve. You'll see conflict markers in the file:
+```
+<<<<<<< HEAD
+your changes
+=======
+their changes
+>>>>>>> feature-branch
+```
+
+Edit the file to resolve the conflict, remove the markers: 
+```bash
+git diff # useful command for merge conflicts to see what is conflicting
+```
+
+then:
+```bash
+git add <resolved-file>
+git merge --continue
+```
+
+If you just want to accept all changes from one side:
+```bash
+git checkout --ours <file>     # keep the current branch's version
+git checkout --theirs <file>   # keep the incoming branch's version
+```
+
+---
+
+## Interactive Session
 
 Head over to the **[Playground](playground.html)** to start practicing. There are challenges, merge conflicts, and a sandbox to break things in.
 

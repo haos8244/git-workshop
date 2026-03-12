@@ -31,7 +31,7 @@ jobs:
         with:
           args: >-
             --standalone
-            --metadata title="git Workshop"
+            --metadata pagetitle="git Workshop"
             --css=style.css
             --output=build/index.html
             README.md
@@ -41,7 +41,7 @@ jobs:
         with:
           args: >-
             --standalone
-            --metadata title="git Playground"
+            --metadata pagetitle="git Playground"
             --css=style.css
             --output=build/playground.html
             PLAYGROUND.md
