@@ -1,0 +1,66 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: # allow manual trigger
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Create build directory
+        run: |
+          mkdir -p build
+          touch build/.nojekyll
+
+      - name: Convert README to HTML
+        uses: docker://pandoc/core:3.8
+        with:
+          args: >-
+            --standalone
+            --metadata title="git Workshop"
+            --css=style.css
+            --output=build/index.html
+            README.md
+
+      - name: Convert Playground to HTML
+        uses: docker://pandoc/core:3.8
+        with:
+          args: >-
+            --standalone
+            --metadata title="git Playground"
+            --css=style.css
+            --output=build/playground.html
+            PLAYGROUND.md
+
+      - name: Copy stylesheet
+        run: cp style.css build/style.css
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: build
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
